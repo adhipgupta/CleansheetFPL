@@ -154,20 +154,6 @@ def merge_attack_defense(defense_table, attack_table, final_table):
 
     return final_table
 
-def train_model(X, n_estimators=300, max_depth=5, learning_rate=0.15):
-    #Train the Model
-    y = X.clean_sheets
-    X.drop('clean_sheets', axis=1, inplace=True)
-    X_train_full, X_valid_full, y_train, y_valid = train_test_split(X, y, train_size=0.9, test_size=0.1,
-                                                                    random_state=0, shuffle=False)
-    my_model_1 = XGBRegressor(random_state=0, n_estimators=300, max_depth=5, learning_rate=0.15)
-
-
-    my_model_1.fit(X_train_full, y_train) # Your code here
-    predictions_1 =  my_model_1.predict(X_valid_full)
-    mae = mean_absolute_error(predictions_1, y_valid) # Your code here
-    return my_model_1, mae
-
 def get_fixtures():
     #Get all GWs information. And create a test data set based on the latest Gameweek.
     future_gw_csv = "https://raw.githubusercontent.com/vaastav/Fantasy-Premier-League/master/data/2022-23/fixtures.csv"
