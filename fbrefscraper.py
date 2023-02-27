@@ -204,20 +204,3 @@ def get_fixtures():
     gws_all_fixtures = pd.concat([gws, gws_swapped], ignore_index=True)
     gws_all_fixtures.drop('team_h', axis=1, inplace=True)
     return gws_all_fixtures
-
-'''
-print("{:<20} {:<20} {:<20} {:<20}".format('CleanSheet', 'Team', 'Opposition', 'gw'))
-for key, value in sorted_dict.items():
-    cs, team, opp, gw = value
-    print("{:<20} {:<20} {:<20} {:<20}".format(round(key,3), team, opp, gw))
-predictions_info = {}
-k = 0
-for i,j in y_valid.iteritems():
-    predictions_info[predictions_1[k]] = [j, final_table.team[i], id_to_team[X_valid_full.opponent_team[i]],X_valid_full.GW[i]]
-    k = k + 1
-
-myKeys = list(predictions_info.keys())
-myKeys.sort()
-sorted_dict = {i: predictions_info[i] for i in myKeys}
-#print (sorted_dict)
-'''
