@@ -2,7 +2,7 @@
 Predict the probability of a Clean Sheet for a Premier League team for a given Fantasy Premier League Gameweek.
 
 ## Quick Start
-- Train the model ( only need to run this once): 
+- Train the model: 
 *python3 ./trainmodel.py*
 - Predict Clean Sheet for a Game week: 
 *python3 predictFPLDefenderCleanSheet.py --gw {gameweek}*
